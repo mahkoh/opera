@@ -1,9 +1,10 @@
 [package]
 name = "opera"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2018"
 license = "MIT OR Apache-2.0"
 description = "Marker types that are easy to understand"
+repository = "https://github.com/mahkoh/opera"
 categories = ["no-std", "rust-patterns"]
 
 [dev-dependencies]
