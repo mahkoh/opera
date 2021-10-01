@@ -1,0 +1,9 @@
+[package]
+name = "opera"
+version = "1.0.0"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Marker types that are easy to understand"
+
+[dev-dependencies]
+trybuild = "1.0.45"

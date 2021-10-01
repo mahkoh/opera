@@ -1,0 +1,17 @@
+error[E0277]: `*mut u8` cannot be sent between threads safely
+  --> $DIR/not_send_01.rs:12:5
+   |
+3  | pub fn assert_send<T: Send>() {
+   |                       ---- required by this bound in `assert_send`
+...
+12 |     assert_send::<X>();
+   |     ^^^^^^^^^^^^^^^^ `*mut u8` cannot be sent between threads safely
+   |
+   = help: within `X`, the trait `Send` is not implemented for `*mut u8`
+   = note: required because it appears within the type `PhantomData<*mut u8>`
+   = note: required because it appears within the type `PhantomNotSend`
+note: required because it appears within the type `X`
+  --> $DIR/not_send_01.rs:7:8
+   |
+7  | struct X {
+   |        ^

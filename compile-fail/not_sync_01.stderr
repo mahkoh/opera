@@ -1,0 +1,17 @@
+error[E0277]: `*mut u8` cannot be shared between threads safely
+  --> $DIR/not_sync_01.rs:12:5
+   |
+3  | pub fn assert_sync<T: Sync>() {
+   |                       ---- required by this bound in `assert_sync`
+...
+12 |     assert_sync::<X>();
+   |     ^^^^^^^^^^^^^^^^ `*mut u8` cannot be shared between threads safely
+   |
+   = help: within `X`, the trait `Sync` is not implemented for `*mut u8`
+   = note: required because it appears within the type `PhantomData<*mut u8>`
+   = note: required because it appears within the type `PhantomNotSync`
+note: required because it appears within the type `X`
+  --> $DIR/not_sync_01.rs:7:8
+   |
+7  | struct X {
+   |        ^
