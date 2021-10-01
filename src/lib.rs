@@ -1,10 +1,11 @@
+#![cfg_attr(not(test), no_std)]
 //! This crate provides marker types that are easier to understand than using
 //! [PhantomData] directly.
 
 #[cfg(test)]
 mod tests;
 
-use std::marker::PhantomData;
+use core::marker::PhantomData;
 
 /// A marker type that implements [`!Send`](Send).
 ///
